@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Login</h2>
+
+<form method="post">
+
+<select name="role" class="form-control">
+
+<option value="admin">Admin</option>
+<option value="student">Student</option>
+<option value="company">Company</option>
+
+</select>
+
+<input type="text" name="email" placeholder="Email" class="form-control mt-2">
+
+<input type="password" name="password" placeholder="Password" class="form-control mt-2">
+
+<button class="btn btn-primary mt-3">Login</button>
+
+</form>
+
+{% endblock %}

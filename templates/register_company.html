@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Company Registration</h2>
+
+<form method="post">
+
+<input type="text" name="company_name" placeholder="Company Name" class="form-control">
+
+<input type="email" name="email" placeholder="Email" class="form-control mt-2">
+
+<input type="password" name="password" placeholder="Password" class="form-control mt-2">
+
+<input type="text" name="hr_contact" placeholder="HR Contact" class="form-control mt-2">
+
+<input type="text" name="website" placeholder="Website" class="form-control mt-2">
+
+<button class="btn btn-warning mt-3">Register</button>
+
+</form>
+
+{% endblock %}

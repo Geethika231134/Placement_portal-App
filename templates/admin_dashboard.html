@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Admin Dashboard</h2>
+
+<div class="mb-3">
+<a href="/logout" class="btn btn-danger">Logout</a>
+</div>
+
+<div class="row">
+
+<div class="col-md-3">
+<div class="card p-3">
+<h4>{{students}}</h4>
+<p>Total Students</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3">
+<h4>{{companies}}</h4>
+<p>Total Companies</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3">
+<h4>{{drives}}</h4>
+<p>Total Drives</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3">
+<h4>{{applications}}</h4>
+<p>Total Applications</p>
+</div>
+</div>
+
+</div>
+
+<hr>
+
+<h4>Manage Data</h4>
+
+<a href="/admin/students" class="btn btn-primary">View Students</a>
+<a href="/admin/companies" class="btn btn-success">View Companies</a>
+<a href="/admin/drives" class="btn btn-warning">View Placement Drives</a>
+
+{% endblock %}

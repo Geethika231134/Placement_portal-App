@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Placement Drives</h2>
+
+<table class="table">
+
+<tr>
+<th>Company</th>
+<th>Job Title</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for d in drives %}
+
+<tr>
+
+<td>{{d.company_name}}</td>
+<td>{{d.job_title}}</td>
+<td>{{d.status}}</td>
+
+<td>
+
+<a href="/admin/approve_drive/{{d.id}}" class="btn btn-success">
+Approve
+</a>
+
+<a href="/admin/reject_drive/{{d.id}}" class="btn btn-danger">
+Reject
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

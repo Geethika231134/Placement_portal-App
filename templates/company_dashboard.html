@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Company Dashboard</h2>
+
+<div class="mb-3">
+<a href="/company/create_drive" class="btn btn-primary">Create Drive</a>
+<a href="/logout" class="btn btn-danger">Logout</a>
+</div>
+
+<table class="table table-striped">
+<tr>
+<th>Job Title</th>
+<th>Deadline</th>
+<th>Status</th>
+<th>Applications</th>
+</tr>
+
+{% for d in drives %}
+<tr>
+<td>{{d.job_title}}</td>
+<td>{{d.deadline}}</td>
+<td>{{d.status}}</td>
+<td>
+<a href="/company/applications/{{d.id}}" class="btn btn-info">View</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

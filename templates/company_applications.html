@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Student Applications</h2>
+
+<table class="table">
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for a in apps %}
+
+<tr>
+
+<td>{{a.name}}</td>
+<td>{{a.email}}</td>
+<td>{{a.phone}}</td>
+<td>{{a.status}}</td>
+
+<td>
+
+<a href="/company/shortlist/{{a.id}}" class="btn btn-success">
+Shortlist
+</a>
+
+<a href="/company/reject_student/{{a.id}}" class="btn btn-danger">
+Reject
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

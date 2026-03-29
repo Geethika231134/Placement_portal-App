@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Students List</h2>
+
+<table class="table">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+
+{% for s in students %}
+
+<tr>
+
+<td>{{s.id}}</td>
+<td>{{s.name}}</td>
+<td>{{s.email}}</td>
+<td>{{s.status}}</td>
+
+<td>
+
+<a href="/admin/blacklist_student/{{s.id}}" class="btn btn-warning">
+Blacklist
+</a>
+
+<a href="/admin/delete_student/{{s.id}}" class="btn btn-danger">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

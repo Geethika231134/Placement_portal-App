@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Welcome to Student Dashboard</h2>
+
+<div class="mb-3">
+    <a href="/student/profile" class="btn btn-primary">Update Profile</a>
+    <a href="/student/applications" class="btn btn-info">Track Applications</a>
+    <a href="/logout" class="btn btn-danger">Logout</a>
+</div>
+
+<h3>Approved Placement Drives</h3>
+
+<table class="table table-striped">
+<tr>
+<th>Company</th>
+<th>Job Title</th>
+<th>Description</th>
+<th>Eligibility</th>
+<th>Deadline</th>
+<th>Action</th>
+</tr>
+
+{% for d in drives %}
+<tr>
+<td>{{d.company_name}}</td>
+<td>{{d.job_title}}</td>
+<td>{{d.description}}</td>
+<td>{{d.eligibility}}</td>
+<td>{{d.deadline}}</td>
+<td>
+<a href="/apply/{{d.id}}" class="btn btn-success">Apply</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update Profile</h2>
+
+<form method="POST">
+
+<input type="text" name="name" value="{{student.name}}" class="form-control mb-2">
+
+<input type="text" name="phone" value="{{student.phone}}" class="form-control mb-2">
+
+<input type="text" name="branch" value="{{student.branch}}" class="form-control mb-2">
+
+<input type="text" name="cgpa" value="{{student.cgpa}}" class="form-control mb-2">
+
+<button class="btn btn-primary">
+Update
+</button>
+
+</form>
+
+{% endblock %}

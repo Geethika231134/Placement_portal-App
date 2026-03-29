@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Companies</h2>
+
+<form method="post" action="/admin/search_company">
+<input type="text" name="keyword" placeholder="Search Company">
+<button class="btn btn-primary">Search</button>
+</form>
+
+<table class="table mt-3">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Approval</th>
+<th>Action</th>
+</tr>
+
+{% for c in companies %}
+
+<tr>
+
+<td>{{c.id}}</td>
+<td>{{c.company_name}}</td>
+<td>{{c.email}}</td>
+<td>{{c.approval_status}}</td>
+
+<td>
+
+<a href="/admin/approve_company/{{c.id}}" class="btn btn-success">Approve</a>
+
+<a href="/admin/reject_company/{{c.id}}" class="btn btn-danger">Reject</a>
+
+<a href="/admin/blacklist_company/{{c.id}}" class="btn btn-warning">Blacklist</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
